@@ -255,7 +255,7 @@
             </xsl:apply-templates>
             <xsl:if test="@ID='MODS'">
               <xsl:call-template name="index_text_nodes_as_one_text_field">
-                <xsl:with-param name="content" select="dgi-e:FedoraUtils.getRawDatastreamDissemination($PID, @ID, concat($PROT, '://', $HOST, ':', $PORT, '/fedora'), $FEDORAUSER, $FEDORAPASS)"/>
+                <xsl:with-param name="content" select="dgi-e:XMLStringUtils.escapeForXML(dgi-e:FedoraUtils.getRawDatastreamDissemination($PID, @ID, concat($PROT, '://', $HOST, ':', $PORT, '/fedora'), $FEDORAUSER, $FEDORAPASS))"/>
               </xsl:call-template>
             </xsl:if>
           </xsl:when>
